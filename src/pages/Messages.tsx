@@ -1,40 +1,5 @@
 import Layout from "../components/Layout";
-
-type Msg = {
-  id: number;
-  title: string;
-  content: string;
-  time: string;
-  status: "Unread" | "Read";
-  icon?: string;
-};
-
-const messages: Msg[] = [
-  {
-    id: 1,
-    title: "Job Invitation",
-    content: "You've received an interview invite from Pixel Studios.",
-    time: "2 hours ago",
-    status: "Unread",
-    icon: "🎉",
-  },
-  {
-    id: 2,
-    title: "New Recommendation",
-    content: "A new Full Stack Developer role matches your skills.",
-    time: "Today",
-    status: "Unread",
-    icon: "💡",
-  },
-  {
-    id: 3,
-    title: "Profile Reminder",
-    content: "Complete your profile to get better job matches.",
-    time: "Yesterday",
-    status: "Read",
-    icon: "🔔",
-  },
-];
+import { messages } from "../data/jobs";
 
 const Messages = () => {
   return (
