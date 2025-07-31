@@ -6,7 +6,6 @@ export type Job = {
   tags: string[];
   posted: string;
   salary?: string;
-  description: string;
 };
 
 export const allJobs = {
@@ -18,8 +17,7 @@ export const allJobs = {
       location: "New York",
       tags: ["Senior", "Full Time", "50k - 70k"],
       posted: "10 hours ago",
-      description:
-        "We are looking for a passionate frontend designer to join our team and shape the digital experience.",
+      salary: ""
     },
     {
       id: 2,
@@ -28,8 +26,7 @@ export const allJobs = {
       location: "San Francisco",
       tags: ["Mid Level", "Part Time", "40k - 60k"],
       posted: "1 day ago",
-      description:
-        "Design intuitive interfaces and improve user experience across mobile and web platforms.",
+      salary: ""
     },
   ],
   recommended: [
@@ -41,8 +38,6 @@ export const allJobs = {
       tags: ["Senior", "Full Time", "Remote"],
       salary: "80k - 90k",
       posted: "2 days ago",
-      description:
-        "Join a fast-paced team developing scalable backend systems using Python and Django.",
     },
     {
       id: 4,
@@ -52,8 +47,42 @@ export const allJobs = {
       tags: ["Senior", "Part Time", "Remote"],
       salary: "70k - 85k",
       posted: "3 days ago",
-      description:
-        "Drive product development with cross-functional teams and deliver impactful software solutions.",
     },
   ],
 };
+
+export type Msg = {
+  id: number;
+  title: string;
+  content: string;
+  time: string;
+  status: "Unread" | "Read";
+  icon?: string;
+};
+
+export const messages: Msg[] = [
+  {
+    id: 1,
+    title: "Job Invitation",
+    content: "You've received an interview invite from Pixel Studios.",
+    time: "2 hours ago",
+    status: "Unread",
+    icon: "🎉",
+  },
+  {
+    id: 2,
+    title: "New Recommendation",
+    content: "A new Full Stack Developer role matches your skills.",
+    time: "Today",
+    status: "Unread",
+    icon: "💡",
+  },
+  {
+    id: 3,
+    title: "Profile Reminder",
+    content: "Complete your profile to get better job matches.",
+    time: "Yesterday",
+    status: "Read",
+    icon: "🔔",
+  },
+];

@@ -1,65 +1,11 @@
 import Layout from "../components/Layout";
+import { allJobs } from "../data/jobs";
 import { useParams } from "react-router-dom";
 
 const JobDetail = () => {
   const { id } = useParams();
   const jobId = parseInt(id || "");
-
-  type Job = {
-    id: number;
-    title: string;
-    company: string;
-    location: string;
-    tags: string[];
-    posted: string;
-    salary?: string;
-  };
   
-  const allJobs: {
-    suggested: Job[];
-    recommended: Job[];
-  } = {
-    suggested: [
-      {
-        id: 1,
-        title: "Frontend Designer",
-        company: "Info Corp",
-        location: "New York",
-        tags: ["Senior", "Full Time", "50k - 70k"],
-        posted: "10 hours ago",
-      },
-      {
-        id: 2,
-        title: "UI/UX Designer",
-        company: "Pixel Studios",
-        location: "San Francisco",
-        tags: ["Mid Level", "Part Time", "40k - 60k"],
-        posted: "1 day ago",
-      },
-    ],
-    recommended: [
-      {
-        id: 3,
-        title: "Python Developer",
-        company: "Code INC",
-        location: "Germany",
-        tags: ["Senior", "Full Time", "Remote"],
-        salary: "80k - 90k",
-        posted: "2 days ago",
-      },
-      {
-        id: 4,
-        title: "Product Engineer",
-        company: "Cube Tech",
-        location: "UK",
-        tags: ["Senior", "Part Time", "Remote"],
-        salary: "70k - 85k",
-        posted: "3 days ago",
-      },
-    ],
-  };
-  
-
   const job = [...allJobs.suggested, ...allJobs.recommended].find(
     (j) => j.id === jobId
   );
